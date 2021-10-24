@@ -7,15 +7,16 @@ Test Teardown      Encerra Sessão
 Caso de Teste 02 Pesquisar produto inexistente
 	[tags]		caso02
 	Acessar a página home do site Automation Practice
-    Digitar o nome do produto "${PRODUTO_INEXISTENTE}" no campo de pesquisa
+    Digitar o nome do produto "${PRODUTO.INEXISTENTE}" no campo de pesquisa
     Clicar no botão pesquisar
 	Conferir mensagem de erro "${ERRO_MENSAGEM}"
 
 Caso de Teste 03: Listar Produtos
-	Acessar a página home do site
-	Passar o mouse por cima da categoria "Women" no menu principal superior da categoria
-	Clicar na sub categoria "Summer Dresses"
-	Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
+	[tags]		caso03
+	Acessar a página home do site Automation Practice
+	Passar o mouse por cima da categoria "${MENU_WOMEN}" no menu principal superior da categoria
+	Clicar na sub categoria "${SDRESSES_SUBMENU}"
+	Conferir se os produtos da sub-categoria "${SDRESSES_SUBMENU}" foram mostrados na página
 
 # Cado de Teste 04: Adicionar Cliente
 # 	Acessar a página home do site
