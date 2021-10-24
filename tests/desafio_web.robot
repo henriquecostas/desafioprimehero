@@ -18,14 +18,15 @@ Caso de Teste 03: Listar Produtos
 	Clicar na sub categoria "${SDRESSES_SUBMENU}"
 	Conferir se os produtos da sub-categoria "${SDRESSES_SUBMENU}" foram mostrados na página
 
-# Cado de Teste 04: Adicionar Cliente
-# 	Acessar a página home do site
-# 	Clicar em "Sign in"
-# 	Informar um e-mail válido
-# 	Clicar em "Create an account"
-# 	Preencher os dados obrigatórios
-# 	Submeter cadastro
-# 	Conferir se o cadastro foi efetuado com sucesso
+Caso de Teste 04: Adicionar Cliente
+	[tags]		caso04
+	Acessar a página home do site Automation Practice
+	Clicar em "Sign in"
+	Informar um e-mail válido
+	Clicar em "Create an account"
+	Preencher os dados obrigatórios
+	# Submeter cadastro
+	# Conferir se o cadastro foi efetuado com sucesso
 
 
 

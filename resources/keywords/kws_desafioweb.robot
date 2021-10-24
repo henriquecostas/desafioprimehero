@@ -12,7 +12,11 @@ ${MENU_WOMEN}           xpath=//a[@title='Women']
 ${SDRESSES_SUBMENU}     xpath=//a[@title='Summer Dresses']   
 ${SDRESSES_PAGETITLE}   Summer Dresses - My Store
 ${SDRESSES_CATHEADER}   xpath=//span[@class='cat-name'][contains(.,'Summer Dresses')]
+${LOGIN_AUTHPAGE}       xpath=//h3[@class='page-subheading'][contains(.,'Create an account')]
+${CREATEACC_AUTHPAGE}   xpath=//h3[@class='page-subheading'][contains(.,'Your personal information')]
+${CAMPO_EMAIL}          id=email_create
 ${PRODUCT_CONTAINER}    class=product-container
+${EMAIL_VALIDATE}       xpath=//div[@class='form-group form-ok']
 
 *** Keywords ***
 Inicia Sessão
@@ -52,3 +56,46 @@ Conferir se os produtos da sub-categoria "${SDRESSES_SUBMENU}" foram mostrados n
     Title Should Be                 ${SDRESSES_PAGETITLE}
     Page Should Contain Element     ${SDRESSES_CATHEADER}  
     Element Should Be Visible       ${PRODUCT_CONTAINER}
+
+Clicar em "Sign in"
+    Wait Until Element is Visible   xpath://div[@class='nav']
+    Click Element                   xpath://a[@class='login']
+Informar um e-mail válido
+    Page Should Contain Element     ${LOGIN_AUTHPAGE}
+    Input Text                      ${CAMPO_EMAIL}  email3@dominio.com       
+    Click Element                   id:create-account_form
+    Wait Until Element is Visible   ${EMAIL_VALIDATE}
+Clicar em "Create an account"
+    Click Element       id=SubmitCreate
+Preencher os dados obrigatórios
+    Wait Until Element is Visible   ${CREATEACC_AUTHPAGE}
+    Select Radio Button             id_gender       id_gender1
+    Radio Button Should Be Set To   id_gender       1
+    Input Text                      id=customer_firstname   Abcde
+    Input Text                      id=customer_lastname    fghiJ
+    Input Text                      id=passwd               12345
+    Select From List By Value       id=days                 20
+    Select From List By Value       id=months               11
+    Select From List By Value       id=years                1997
+    Select Checkbox                 id=newsletter
+    Input Text                      id=firstname            Abcde
+    Input Text                      id=lastname             fghiJ
+    Input Text                      id=company              Prime Control
+    Input Text                      id=address1             Av. Beira Mar
+    Input Text                      id=address2             nº 102
+    Input Text                      id=city                 Salvador
+    Select From List By Value       id=id_state             4
+    Input Text                      id=postcode             40000
+    Select From List By Value       id=id_country           21
+    Input Text                      id=other                outras ideias
+    Input Text                      id=phone                1234-56789
+    Input Text                      id=phone_mobile         98765-4321
+    Input Text                      id=alias                alias
+    Click Element                   id=submitAccount
+    Element Should Not Be Visible   css=alert alert-danger
+    Page Should Contain Element     xpath=//p[@class='info-account']
+    Page Should Contain Element     xpath=//a[@class='logout']
+
+                                    
+
+
