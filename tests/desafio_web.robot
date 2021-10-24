@@ -11,11 +11,11 @@ Caso de Teste 02 Pesquisar produto inexistente
     Clicar no botão pesquisar
 	Conferir mensagem de erro "${ERRO_MENSAGEM}"
 
-# Caso de Teste 03: Listar Produtos
-# 	Acessar a página home do site
-# 	Passar o mouse por cima da categoria "Women" no menu principal superior da categoria
-# 	Clicar na sub categoria "Summer Dresses"
-# 	Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
+Caso de Teste 03: Listar Produtos
+	Acessar a página home do site
+	Passar o mouse por cima da categoria "Women" no menu principal superior da categoria
+	Clicar na sub categoria "Summer Dresses"
+	Conferir se os produtos da sub-categoria "Summer Dresses" foram mostrados na página
 
 # Cado de Teste 04: Adicionar Cliente
 # 	Acessar a página home do site

@@ -24,8 +24,8 @@ Acessar a página home do site Automation Practice
     Title Should Be                 My Store
     Wait Until Element is Visible   xpath=//*[@id="block_top_menu"]/ul
 
-# Digitar o nome do produto "${PRODUTO_PESQUISADO}" no campo de pesquisa
-#     Input Text      id=search_query_top     ${PRODUTO_PESQUISADO}
+Digitar o nome do produto "${PRODUTO_PESQUISADO}" no campo de pesquisa
+    Input Text      id=search_query_top     ${PRODUTO_PESQUISADO}
 
 Digitar o nome do produto "${PRODUTO_INEXISTENTE}" no campo de pesquisa
     Input Text      id=search_query_top     ${PRODUTO_INEXISTENTE}
@@ -39,7 +39,7 @@ Conferir se o produto "${PRODUTO_PESQUISADO}" foi listado no site
 
 Conferir mensagem de erro "${ERRO_MENSAGEM}"
     Page Should Contain Element     ${ERRO_LOCATOR}
-    
+
     ${ERRO_LOCATOR}=        Get WebElement              ${ERRO_LOCATOR}
     Should Be Equal         ${ERRO_LOCATOR.text}        ${ERRO_MENSAGEM}
     Log                     ${ERRO_LOCATOR.text}
