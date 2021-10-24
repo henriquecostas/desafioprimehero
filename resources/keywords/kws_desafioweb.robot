@@ -62,7 +62,7 @@ Clicar em "Sign in"
     Click Element                   xpath://a[@class='login']
 Informar um e-mail válido
     Page Should Contain Element     ${LOGIN_AUTHPAGE}
-    Input Text                      ${CAMPO_EMAIL}  email3@dominio.com       
+    Input Text                      ${CAMPO_EMAIL}  email4@dominio.com       
     Click Element                   id:create-account_form
     Wait Until Element is Visible   ${EMAIL_VALIDATE}
 Clicar em "Create an account"
@@ -91,7 +91,11 @@ Preencher os dados obrigatórios
     Input Text                      id=phone                1234-56789
     Input Text                      id=phone_mobile         98765-4321
     Input Text                      id=alias                alias
+
+Submeter cadastro    
     Click Element                   id=submitAccount
+
+Conferir se o cadastro foi efetuado com sucesso
     Element Should Not Be Visible   css=alert alert-danger
     Page Should Contain Element     xpath=//p[@class='info-account']
     Page Should Contain Element     xpath=//a[@class='logout']
