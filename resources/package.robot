@@ -6,7 +6,6 @@ Documentation       Todos os recursos que compõe o projeto de Testes Web.
 ##############################
 Library         SeleniumLibrary
 
-
 ##############################
 #          Keywords          #
 ##############################
