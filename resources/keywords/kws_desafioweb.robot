@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation   Todas as keywords dos Testes Web.
 Resource        ../package.robot
-
 *** Keywords ***
+###### Caso de Teste 02 ######
 Acessar a página home do site Automation Practice
     Title Should Be                 ${HOME.TITLE}
     Wait Until Element is Visible   xpath=${HOME.MENU_CATEGORIAS}
@@ -18,6 +18,7 @@ Conferir mensagem de erro "${SEARCHRESULT.ERRO_MENSAGEM}"
     Should Be Equal         ${SEARCHRESULT.ERRO_LOCATOR.text}        ${SEARCHRESULT.ERRO_MENSAGEM}
     Log                     ${SEARCHRESULT.ERRO_LOCATOR.text}
  
+###### Caso de Teste 03 ######
 Passar o mouse por cima da categoria "${HOME.MENU_WOMEN}" no menu principal superior da categoria
     Page Should Contain Element     ${HOME.MENU_WOMEN}
     Mouse Over                      ${HOME.MENU_WOMEN} 
@@ -31,6 +32,7 @@ Conferir se os produtos da sub-categoria "${SDRESSES_SUBMENU}" foram mostrados n
     Page Should Contain Element     xpath=${SDRESSES.CTGHEADER}  
     Element Should Be Visible       xpath=${SDRESSES.CONTAINER_PRODUTOS}
 
+###### Caso de Teste 04 ######
 Clicar em "Sign in"
     Wait Until Element is Visible   xpath=${HOME.NAV}
     Click Element                   xpath=${HOME.SIGNIN_BTN}

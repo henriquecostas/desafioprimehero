@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation	   Casos de testes Web.
 Resource           ../resources/package.robot
 Test Setup         Inicia Sessão
 Test Teardown      Encerra Sessão
