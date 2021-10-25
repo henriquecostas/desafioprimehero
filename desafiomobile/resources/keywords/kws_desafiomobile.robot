@@ -25,23 +25,21 @@ Então será apresentado como Inscrito
     Wait Until Element Is Visible        accessibility_id=Cancelar inscrição de Prime Control.
 
 Abrir App   
-    Wait Until Element Is Visible        xpath=//*[contains(@text, 'Início')]
-    Wait Until Element Is Visible        xpath=//*[@class='android.widget.ImageView'][contains(@content-desc,'YouTube')]
+    Wait Until Element Is Visible        ${HOME.HOME}
+    Wait Until Element Is Visible        ${HOME.LOGO}
 
 Logar no aplicativo com a conta x   
     Click Element       ${HOME.MENU_CONTA}
 
     Wait Until Element is Visible      ${HOME.NOVA_CONTA}
     Click Element                      ${HOME.NOVA_CONTA}
-
     Wait Until Element is Visible      ${LOGIN.AUTH_PAGE}
-    Input Text                         ${LOGIN.INPUT}      ${USER.EMAIL}
-    Click Element                      ${NEXT_BTN}
- 
+    Input Text                         ${LOGIN.EMAIL_INPUT}     ${USER.EMAIL}
+    Click Element                      ${LOGIN.NEXT_BTN}
+    
     Wait Until Element is Visible      ${LOGIN.PWD_AUTH_PAGE}
-   
-    Input Text                         ${LOGIN.INPUT}      ${USER.SENHA}
-    Click Element                      ${NEXT_BTN}
+    Input Text                         ${LOGIN.EMAIL_INPUT}     ${USER.SENHA}
+    Click Element                      ${LOGIN.NEXT_BTN}
     Click Element                      ${LOGIN.AGREE}
     Click Element                      ${LOGIN.BACKUP_SWITCH}
 

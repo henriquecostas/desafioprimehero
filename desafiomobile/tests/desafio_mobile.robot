@@ -6,7 +6,7 @@ Test Teardown       Fechar aplicativo
 
 *** Test Case ***
 Caso de Teste 01: Pesquisar canal “Prime Experts”
-    [Tags]        logar
+    [Tags]        pesquisar
     Dado que o cliente esteja na tela de Home
     E pesquise um vídeo sobre "Prime Experts"
     E acessar o canal da Prime

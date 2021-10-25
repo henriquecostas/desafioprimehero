@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211025 07:27:41.762" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211025 09:41:29.863" rpa="false" schemaversion="2">
 <suite id="s1" name="Desafio Mobile" source="C:\Users\Costa\Desktop\primeherorep\desafiomobile\tests\desafio_mobile.robot">
-<test id="s1-t1" name="Caso de Teste 03: Usar método Swipe na tela">
+<test id="s1-t1" name="Caso de Teste 02: Usar método Swipe na tela">
 <kw name="Abrir aplicativo" library="hooks" type="SETUP">
 <kw name="Set Appium Timeout" library="AppiumLibrary">
 <arg>20</arg>
 <doc>Sets the timeout in seconds used by various keywords.</doc>
-<status status="PASS" starttime="20211025 07:27:42.326" endtime="20211025 07:27:42.326"/>
+<status status="PASS" starttime="20211025 09:41:30.379" endtime="20211025 09:41:30.380"/>
 </kw>
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://localhost:4723/wd/hub</arg>
@@ -22,22 +22,22 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20211025 07:27:42.327" endtime="20211025 07:28:09.767"/>
+<status status="PASS" starttime="20211025 09:41:30.380" endtime="20211025 09:41:50.863"/>
 </kw>
-<status status="PASS" starttime="20211025 07:27:42.325" endtime="20211025 07:28:09.767"/>
+<status status="PASS" starttime="20211025 09:41:30.378" endtime="20211025 09:41:50.864"/>
 </kw>
 <kw name="Abrir App" library="kws_desafiomobile">
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=//*[contains(@text, 'Início')]</arg>
+<arg>${HOME.HOME}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20211025 07:28:09.769" endtime="20211025 07:28:15.101"/>
+<status status="PASS" starttime="20211025 09:41:50.866" endtime="20211025 09:41:57.684"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<arg>xpath=//*[@class='android.widget.ImageView'][contains(@content-desc,'YouTube')]</arg>
+<arg>${HOME.LOGO}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20211025 07:28:15.101" endtime="20211025 07:28:15.766"/>
+<status status="PASS" starttime="20211025 09:41:57.684" endtime="20211025 09:41:58.710"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:09.768" endtime="20211025 07:28:15.766"/>
+<status status="PASS" starttime="20211025 09:41:50.865" endtime="20211025 09:41:58.711"/>
 </kw>
 <kw name="Entrar no menu “Explorar”" library="kws_desafiomobile">
 <kw name="Rolar tela" library="kws_desafiomobile">
@@ -51,22 +51,22 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>${E_X}</arg>
 <arg>${E_Y}</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:15.770" endtime="20211025 07:28:17.184"/>
+<status status="PASS" starttime="20211025 09:41:58.714" endtime="20211025 09:42:00.112"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:15.768" endtime="20211025 07:28:17.184"/>
+<status status="PASS" starttime="20211025 09:41:58.713" endtime="20211025 09:42:00.112"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${HOME.EXPLORAR}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211025 07:28:17.189" level="INFO">Clicking element '//*[@class='android.widget.TextView'][contains(@text,'Explorar')]'.</msg>
-<status status="PASS" starttime="20211025 07:28:17.184" endtime="20211025 07:28:17.983"/>
+<msg timestamp="20211025 09:42:00.119" level="INFO">Clicking element '//*[@class='android.widget.TextView'][contains(@text,'Explorar')]'.</msg>
+<status status="PASS" starttime="20211025 09:42:00.112" endtime="20211025 09:42:02.725"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>${HOME.EXPLORAR_VALID}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20211025 07:28:17.984" endtime="20211025 07:28:19.669"/>
+<status status="PASS" starttime="20211025 09:42:02.725" endtime="20211025 09:42:04.336"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:15.767" endtime="20211025 07:28:19.669"/>
+<status status="PASS" starttime="20211025 09:41:58.712" endtime="20211025 09:42:04.337"/>
 </kw>
 <kw name="Usar swipe de tela até o 10 item da tela" library="kws_desafiomobile">
 <for flavor="IN RANGE">
@@ -81,21 +81,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:19.680" endtime="20211025 07:28:21.144"/>
+<status status="PASS" starttime="20211025 09:42:04.340" endtime="20211025 09:42:05.793"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:21.145" level="INFO">${SWIPE_COUNTER} = 0+1</msg>
-<status status="PASS" starttime="20211025 07:28:21.144" endtime="20211025 07:28:21.146"/>
+<msg timestamp="20211025 09:42:05.794" level="INFO">${SWIPE_COUNTER} = 0+1</msg>
+<status status="PASS" starttime="20211025 09:42:05.793" endtime="20211025 09:42:05.794"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:21.146" endtime="20211025 07:28:21.147"/>
+<status status="PASS" starttime="20211025 09:42:05.795" endtime="20211025 09:42:05.822"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:19.680" endtime="20211025 07:28:21.147"/>
+<status status="PASS" starttime="20211025 09:42:04.339" endtime="20211025 09:42:05.822"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">1</var>
@@ -105,21 +105,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:21.148" endtime="20211025 07:28:22.600"/>
+<status status="PASS" starttime="20211025 09:42:05.823" endtime="20211025 09:42:07.231"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:22.600" level="INFO">${SWIPE_COUNTER} = 1+1</msg>
-<status status="PASS" starttime="20211025 07:28:22.600" endtime="20211025 07:28:22.600"/>
+<msg timestamp="20211025 09:42:07.232" level="INFO">${SWIPE_COUNTER} = 1+1</msg>
+<status status="PASS" starttime="20211025 09:42:07.232" endtime="20211025 09:42:07.232"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:22.600" endtime="20211025 07:28:22.600"/>
+<status status="PASS" starttime="20211025 09:42:07.233" endtime="20211025 09:42:07.233"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:21.148" endtime="20211025 07:28:22.600"/>
+<status status="PASS" starttime="20211025 09:42:05.823" endtime="20211025 09:42:07.233"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">2</var>
@@ -129,21 +129,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:22.600" endtime="20211025 07:28:23.926"/>
+<status status="PASS" starttime="20211025 09:42:07.234" endtime="20211025 09:42:08.544"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:23.927" level="INFO">${SWIPE_COUNTER} = 2+1</msg>
-<status status="PASS" starttime="20211025 07:28:23.926" endtime="20211025 07:28:23.927"/>
+<msg timestamp="20211025 09:42:08.545" level="INFO">${SWIPE_COUNTER} = 2+1</msg>
+<status status="PASS" starttime="20211025 09:42:08.544" endtime="20211025 09:42:08.545"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:23.927" endtime="20211025 07:28:23.927"/>
+<status status="PASS" starttime="20211025 09:42:08.545" endtime="20211025 09:42:08.546"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:22.600" endtime="20211025 07:28:23.927"/>
+<status status="PASS" starttime="20211025 09:42:07.233" endtime="20211025 09:42:08.546"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">3</var>
@@ -153,21 +153,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:23.928" endtime="20211025 07:28:25.256"/>
+<status status="PASS" starttime="20211025 09:42:08.546" endtime="20211025 09:42:10.075"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:25.257" level="INFO">${SWIPE_COUNTER} = 3+1</msg>
-<status status="PASS" starttime="20211025 07:28:25.256" endtime="20211025 07:28:25.257"/>
+<msg timestamp="20211025 09:42:10.076" level="INFO">${SWIPE_COUNTER} = 3+1</msg>
+<status status="PASS" starttime="20211025 09:42:10.075" endtime="20211025 09:42:10.076"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:25.258" endtime="20211025 07:28:25.259"/>
+<status status="PASS" starttime="20211025 09:42:10.076" endtime="20211025 09:42:10.077"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:23.928" endtime="20211025 07:28:25.259"/>
+<status status="PASS" starttime="20211025 09:42:08.546" endtime="20211025 09:42:10.077"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">4</var>
@@ -177,21 +177,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:25.260" endtime="20211025 07:28:26.690"/>
+<status status="PASS" starttime="20211025 09:42:10.077" endtime="20211025 09:42:11.463"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:26.691" level="INFO">${SWIPE_COUNTER} = 4+1</msg>
-<status status="PASS" starttime="20211025 07:28:26.690" endtime="20211025 07:28:26.691"/>
+<msg timestamp="20211025 09:42:11.464" level="INFO">${SWIPE_COUNTER} = 4+1</msg>
+<status status="PASS" starttime="20211025 09:42:11.463" endtime="20211025 09:42:11.464"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:26.692" endtime="20211025 07:28:26.693"/>
+<status status="PASS" starttime="20211025 09:42:11.465" endtime="20211025 09:42:11.466"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:25.259" endtime="20211025 07:28:26.693"/>
+<status status="PASS" starttime="20211025 09:42:10.077" endtime="20211025 09:42:11.466"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">5</var>
@@ -201,21 +201,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:26.693" endtime="20211025 07:28:27.970"/>
+<status status="PASS" starttime="20211025 09:42:11.466" endtime="20211025 09:42:12.814"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:27.972" level="INFO">${SWIPE_COUNTER} = 5+1</msg>
-<status status="PASS" starttime="20211025 07:28:27.971" endtime="20211025 07:28:27.972"/>
+<msg timestamp="20211025 09:42:12.815" level="INFO">${SWIPE_COUNTER} = 5+1</msg>
+<status status="PASS" starttime="20211025 09:42:12.814" endtime="20211025 09:42:12.815"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:27.972" endtime="20211025 07:28:27.973"/>
+<status status="PASS" starttime="20211025 09:42:12.815" endtime="20211025 09:42:12.816"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:26.693" endtime="20211025 07:28:27.973"/>
+<status status="PASS" starttime="20211025 09:42:11.466" endtime="20211025 09:42:12.816"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">6</var>
@@ -225,21 +225,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:27.974" endtime="20211025 07:28:29.357"/>
+<status status="PASS" starttime="20211025 09:42:12.816" endtime="20211025 09:42:14.178"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:29.358" level="INFO">${SWIPE_COUNTER} = 6+1</msg>
-<status status="PASS" starttime="20211025 07:28:29.357" endtime="20211025 07:28:29.358"/>
+<msg timestamp="20211025 09:42:14.179" level="INFO">${SWIPE_COUNTER} = 6+1</msg>
+<status status="PASS" starttime="20211025 09:42:14.178" endtime="20211025 09:42:14.179"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:29.358" endtime="20211025 07:28:29.359"/>
+<status status="PASS" starttime="20211025 09:42:14.179" endtime="20211025 09:42:14.180"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:27.974" endtime="20211025 07:28:29.359"/>
+<status status="PASS" starttime="20211025 09:42:12.816" endtime="20211025 09:42:14.180"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">7</var>
@@ -249,21 +249,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:29.359" endtime="20211025 07:28:30.703"/>
+<status status="PASS" starttime="20211025 09:42:14.180" endtime="20211025 09:42:15.567"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:30.703" level="INFO">${SWIPE_COUNTER} = 7+1</msg>
-<status status="PASS" starttime="20211025 07:28:30.703" endtime="20211025 07:28:30.703"/>
+<msg timestamp="20211025 09:42:15.568" level="INFO">${SWIPE_COUNTER} = 7+1</msg>
+<status status="PASS" starttime="20211025 09:42:15.568" endtime="20211025 09:42:15.568"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:30.703" endtime="20211025 07:28:30.703"/>
+<status status="PASS" starttime="20211025 09:42:15.569" endtime="20211025 09:42:15.570"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:29.359" endtime="20211025 07:28:30.703"/>
+<status status="PASS" starttime="20211025 09:42:14.180" endtime="20211025 09:42:15.570"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">8</var>
@@ -273,21 +273,21 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:30.703" endtime="20211025 07:28:32.074"/>
+<status status="PASS" starttime="20211025 09:42:15.571" endtime="20211025 09:42:16.980"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:32.074" level="INFO">${SWIPE_COUNTER} = 8+1</msg>
-<status status="PASS" starttime="20211025 07:28:32.074" endtime="20211025 07:28:32.074"/>
+<msg timestamp="20211025 09:42:16.981" level="INFO">${SWIPE_COUNTER} = 8+1</msg>
+<status status="PASS" starttime="20211025 09:42:16.981" endtime="20211025 09:42:16.981"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<status status="PASS" starttime="20211025 07:28:32.074" endtime="20211025 07:28:32.074"/>
+<status status="PASS" starttime="20211025 09:42:16.982" endtime="20211025 09:42:16.982"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:30.703" endtime="20211025 07:28:32.074"/>
+<status status="PASS" starttime="20211025 09:42:15.570" endtime="20211025 09:42:16.982"/>
 </iter>
 <iter>
 <var name="${SWIPE_COUNTER}">9</var>
@@ -297,60 +297,60 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>0</arg>
 <arg>1293</arg>
 <doc>Swipe from one point to another point, for an optional duration.</doc>
-<status status="PASS" starttime="20211025 07:28:32.074" endtime="20211025 07:28:33.592"/>
+<status status="PASS" starttime="20211025 09:42:16.983" endtime="20211025 09:42:18.319"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${SWIPE_COUNTER}</var>
 <arg>${SWIPE_COUNTER}+1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211025 07:28:33.594" level="INFO">${SWIPE_COUNTER} = 9+1</msg>
-<status status="PASS" starttime="20211025 07:28:33.593" endtime="20211025 07:28:33.594"/>
+<msg timestamp="20211025 09:42:18.320" level="INFO">${SWIPE_COUNTER} = 9+1</msg>
+<status status="PASS" starttime="20211025 09:42:18.319" endtime="20211025 09:42:18.320"/>
 </kw>
 <kw name="Exit For Loop If" library="BuiltIn">
 <arg>${SWIPE_COUNTER}== 10</arg>
 <doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
-<msg timestamp="20211025 07:28:33.596" level="INFO">Exiting for loop altogether.</msg>
-<status status="PASS" starttime="20211025 07:28:33.594" endtime="20211025 07:28:33.598"/>
+<msg timestamp="20211025 09:42:18.321" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211025 09:42:18.321" endtime="20211025 09:42:18.322"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:32.074" endtime="20211025 07:28:33.598"/>
+<status status="PASS" starttime="20211025 09:42:16.983" endtime="20211025 09:42:18.323"/>
 </iter>
-<status status="PASS" starttime="20211025 07:28:19.669" endtime="20211025 07:28:33.598"/>
+<status status="PASS" starttime="20211025 09:42:04.339" endtime="20211025 09:42:18.323"/>
 </for>
-<status status="PASS" starttime="20211025 07:28:19.669" endtime="20211025 07:28:33.599"/>
+<status status="PASS" starttime="20211025 09:42:04.338" endtime="20211025 09:42:18.323"/>
 </kw>
 <kw name="Clicar no vídeo" library="kws_desafiomobile">
 <kw name="Wait Until Element Is Visible" library="AppiumLibrary">
 <arg>${HOME.VIDEO_CONTAINER}</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" starttime="20211025 07:28:33.602" endtime="20211025 07:28:36.109"/>
+<status status="PASS" starttime="20211025 09:42:18.324" endtime="20211025 09:42:19.984"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${HOME.VIDEO_CONTAINER}</arg>
 <doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211025 07:28:36.118" level="INFO">Clicking element '//*[@class='android.view.View']'.</msg>
-<status status="PASS" starttime="20211025 07:28:36.109" endtime="20211025 07:28:36.555"/>
+<msg timestamp="20211025 09:42:19.988" level="INFO">Clicking element '//*[@class='android.view.View']'.</msg>
+<status status="PASS" starttime="20211025 09:42:19.985" endtime="20211025 09:42:20.518"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:33.601" endtime="20211025 07:28:36.556"/>
+<status status="PASS" starttime="20211025 09:42:18.324" endtime="20211025 09:42:20.519"/>
 </kw>
 <kw name="Fechar aplicativo" library="hooks" type="TEARDOWN">
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20211025 07:28:36.559" endtime="20211025 07:28:38.570"/>
+<status status="PASS" starttime="20211025 09:42:20.521" endtime="20211025 09:42:22.249"/>
 </kw>
-<status status="PASS" starttime="20211025 07:28:36.558" endtime="20211025 07:28:38.570"/>
+<status status="PASS" starttime="20211025 09:42:20.520" endtime="20211025 09:42:22.250"/>
 </kw>
-<tag>PE</tag>
-<status status="PASS" starttime="20211025 07:27:42.324" endtime="20211025 07:28:38.570"/>
+<tag>swipe</tag>
+<status status="PASS" starttime="20211025 09:41:30.376" endtime="20211025 09:42:22.250"/>
 </test>
 <doc>Testes Mobile</doc>
-<status status="PASS" starttime="20211025 07:27:41.762" endtime="20211025 07:28:38.580"/>
+<status status="PASS" starttime="20211025 09:41:29.866" endtime="20211025 09:42:22.253"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">PE</stat>
+<stat pass="1" fail="0" skip="0">swipe</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Desafio Mobile">Desafio Mobile</stat>

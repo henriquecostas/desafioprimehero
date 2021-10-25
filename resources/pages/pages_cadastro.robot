@@ -5,10 +5,12 @@ Documentation       Variáveis e elementos da página de Cadastro de Usuário do
 # ${EMAIL_LOOP}
 &{PGCADASTRO}
 ...     SUBMIT_BTN=submitAccount
-...     FORM=account-creation_form
+...     FORM1=create-account_form
+...     FORM2=account-creation_form
 ...     RADIO_GENDER_FML=id_gender
 ...     CHBOX_NEWSL=newsletter
 ...     ERRO=alert alert-danger
+...     ERRO_TEXT=An account using this email address has already been registered. Please enter a valid password or request a new one. 
 ...     WELCOME=//p[@class='info-account']
 ...     LOGOUT_BTN=//a[@class='logout']
 ################################
@@ -41,7 +43,7 @@ Documentation       Variáveis e elementos da página de Cadastro de Usuário do
 ...     VALID=0
 
 &{USER}
-...     EMAIL=meuemail8@dominio.com
+...     EMAIL=emaildeexemplo@dominio.com
 ...     SENHA=123456
 ...     NOME=Henri
 ...     SOBRENOME=Costa

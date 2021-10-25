@@ -58,7 +58,7 @@ Clicar em "Create an account"
     Click Element       id=${LOGIN.SUBMIT_BTN}
 
 Preencher os dados obrigatórios
-    Wait Until Element is Visible   ${PGCADASTRO.FORM}
+    Wait Until Element is Visible   ${PGCADASTRO.FORM2}
     Validar sexo do Usuário
     Select Radio Button             ${PGCADASTRO.RADIO_GENDER_FML}       ${SEXO.VALID}
     Radio Button Should Be Set To   ${PGCADASTRO.RADIO_GENDER_FML}       ${SEXO.VALID}
