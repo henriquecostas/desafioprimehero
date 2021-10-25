@@ -1,10 +1,32 @@
 *** Settings ***
-Documentation   Aqui estarão presentes todos os recursos que compõe o projeto.
+Documentation       Todos os recursos que compõe o projeto de Testes Web.
 
-Library     SeleniumLibrary
-Library     AppiiumLibrary
+##############################
+#          Libraries         #
+##############################
+Library         SeleniumLibrary
 
-*** Keywords ***
-Resource    /resources/keywords/kws_mobileautomation.robot
-Resource    /resources/keywords/kws_webautomation.robot
-Resource    ../resources/pages/pages_home.robot
+
+##############################
+#          Keywords          #
+##############################
+Resource    keywords/kws_desafioweb.robot
+
+##############################
+#            Pages           #
+##############################
+Resource    pages/pages_home.robot
+Resource    pages/pages_pesquisa.robot
+Resource    pages/pages_summerdresses.robot
+Resource    pages/pages_login.robot
+Resource    pages/pages_cadastro.robot
+
+##############################
+#          functions         #
+##############################
+Resource    functions.robot
+
+##############################
+#            Hooks           #
+##############################
+Resource    hooks.robot

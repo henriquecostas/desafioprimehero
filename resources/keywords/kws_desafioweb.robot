@@ -1,105 +1,76 @@
 *** Settings ***
-Documentation   Aqui estarão todas as keywords dos testes Web.
-Library         SeleniumLibrary
-
-*** Variables ***
-${URL}                  http://automationpractice.com      
-${BROWSER}              chrome
-&{PRODUTO}              EXISTENTE=blouse   INEXISTENTE=margarina
-${ERRO_LOCATOR}         xpath=//p[@class='alert alert-warning']
-${ERRO_MENSAGEM}        No results were found for your search "${PRODUTO.INEXISTENTE}"
-${MENU_WOMEN}           xpath=//a[@title='Women']
-${SDRESSES_SUBMENU}     xpath=//a[@title='Summer Dresses']   
-${SDRESSES_PAGETITLE}   Summer Dresses - My Store
-${SDRESSES_CATHEADER}   xpath=//span[@class='cat-name'][contains(.,'Summer Dresses')]
-${LOGIN_AUTHPAGE}       xpath=//h3[@class='page-subheading'][contains(.,'Create an account')]
-${CREATEACC_AUTHPAGE}   xpath=//h3[@class='page-subheading'][contains(.,'Your personal information')]
-${CAMPO_EMAIL}          id=email_create
-${PRODUCT_CONTAINER}    class=product-container
-${EMAIL_VALIDATE}       xpath=//div[@class='form-group form-ok']
+Documentation   Todas as keywords dos Testes Web.
+Resource        ../package.robot
 
 *** Keywords ***
-Inicia Sessão
-    Open Browser    ${URL}      ${BROWSER}
-    Maximize Browser Window
-
-Encerra Sessão
-    Set Screenshot Directory    ../primeherorep/screenshots/   
-    Capture Page Screenshot
-    Close Browser
-
 Acessar a página home do site Automation Practice
-    Go To                           ${URL}/index.php
-    Title Should Be                 My Store
-    Wait Until Element is Visible   xpath=//*[@id="block_top_menu"]/ul
+    Title Should Be                 ${HOME.TITLE}
+    Wait Until Element is Visible   xpath=${HOME.MENU_CATEGORIAS}
 
 Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
-    Input Text      id=search_query_top     ${PRODUTO}
+    Input Text      id=${HOME.PESQUISA_INPUT}     ${PRODUTO}
 Clicar no botão pesquisar
-    Click Element       name=submit_search
-Conferir mensagem de erro "${ERRO_MENSAGEM}"
-    Page Should Contain Element     ${ERRO_LOCATOR}
+    Click Element       name=${HOME.PESQUISA_BTN}
+Conferir mensagem de erro "${SEARCHRESULT.ERRO_MENSAGEM}"
+    Page Should Contain Element     xpath=${SEARCHRESULT.ERRO_LOCATOR}
 
-    ${ERRO_LOCATOR}=        Get WebElement              ${ERRO_LOCATOR}
-    Should Be Equal         ${ERRO_LOCATOR.text}        ${ERRO_MENSAGEM}
-    Log                     ${ERRO_LOCATOR.text}
+    ${SEARCHRESULT.ERRO_LOCATOR}=        Get WebElement              ${SEARCHRESULT.ERRO_LOCATOR}
+    Should Be Equal         ${SEARCHRESULT.ERRO_LOCATOR.text}        ${SEARCHRESULT.ERRO_MENSAGEM}
+    Log                     ${SEARCHRESULT.ERRO_LOCATOR.text}
  
-Passar o mouse por cima da categoria "${MENU_WOMEN}" no menu principal superior da categoria
-    Page Should Contain Element     ${MENU_WOMEN}
-    Mouse Over                      ${MENU_WOMEN} 
+Passar o mouse por cima da categoria "${HOME.MENU_WOMEN}" no menu principal superior da categoria
+    Page Should Contain Element     ${HOME.MENU_WOMEN}
+    Mouse Over                      ${HOME.MENU_WOMEN} 
 
-Clicar na sub categoria "${SDRESSES_SUBMENU}"
-    Wait Until Element Is Visible   ${SDRESSES_SUBMENU}
-    Click Element                   ${SDRESSES_SUBMENU}
+Clicar na sub categoria "${SDRESSES.SUBMENU}"
+    Wait Until Element Is Visible   xpath=${SDRESSES.SUBMENU}
+    Click Element                   xpath=${SDRESSES.SUBMENU}
 
 Conferir se os produtos da sub-categoria "${SDRESSES_SUBMENU}" foram mostrados na página
-    Title Should Be                 ${SDRESSES_PAGETITLE}
-    Page Should Contain Element     ${SDRESSES_CATHEADER}  
-    Element Should Be Visible       ${PRODUCT_CONTAINER}
+    Title Should Be                 ${SDRESSES.TITLE}
+    Page Should Contain Element     xpath=${SDRESSES.CTGHEADER}  
+    Element Should Be Visible       xpath=${SDRESSES.CONTAINER_PRODUTOS}
 
 Clicar em "Sign in"
-    Wait Until Element is Visible   xpath://div[@class='nav']
-    Click Element                   xpath://a[@class='login']
+    Wait Until Element is Visible   xpath=${HOME.NAV}
+    Click Element                   xpath=${HOME.SIGNIN_BTN}
 Informar um e-mail válido
-    Page Should Contain Element     ${LOGIN_AUTHPAGE}
-    Input Text                      ${CAMPO_EMAIL}  email4@dominio.com       
-    Click Element                   id:create-account_form
-    Wait Until Element is Visible   ${EMAIL_VALIDATE}
+    Title Should Be                 ${LOGIN.TITLE}
+    Wait Until Element is Visible   ${LOGIN.FORM}
+    # Loop do email para teste não quebrar por conta já existente
+    Input Text                      ${LOGIN.EMAIL_INPUT}    ${USER.EMAIL}     
+    Click Element                   id:${LOGIN.FORM}
+    Wait Until Element is Visible   xpath=${LOGIN.EMAIL_VALIDATE}
 Clicar em "Create an account"
-    Click Element       id=SubmitCreate
+    Click Element       id=${LOGIN.SUBMIT_BTN}
 Preencher os dados obrigatórios
-    Wait Until Element is Visible   ${CREATEACC_AUTHPAGE}
-    Select Radio Button             id_gender       id_gender1
-    Radio Button Should Be Set To   id_gender       1
-    Input Text                      id=customer_firstname   Abcde
-    Input Text                      id=customer_lastname    fghiJ
-    Input Text                      id=passwd               12345
-    Select From List By Value       id=days                 20
-    Select From List By Value       id=months               11
-    Select From List By Value       id=years                1997
-    Select Checkbox                 id=newsletter
-    Input Text                      id=firstname            Abcde
-    Input Text                      id=lastname             fghiJ
-    Input Text                      id=company              Prime Control
-    Input Text                      id=address1             Av. Beira Mar
-    Input Text                      id=address2             nº 102
-    Input Text                      id=city                 Salvador
-    Select From List By Value       id=id_state             4
-    Input Text                      id=postcode             40000
-    Select From List By Value       id=id_country           21
-    Input Text                      id=other                outras ideias
-    Input Text                      id=phone                1234-56789
-    Input Text                      id=phone_mobile         98765-4321
-    Input Text                      id=alias                alias
+    Wait Until Element is Visible   ${PGCADASTRO.FORM}
+    Validar sexo do Usuário
+    Select Radio Button             ${PGCADASTRO.RADIO_GENDER_FML}       ${SEXO.VALID}
+    Radio Button Should Be Set To   ${PGCADASTRO.RADIO_GENDER_FML}       ${SEXO.VALID}
+    Input Text                      id=${PGCADASTRO.INPUT_NOME}     ${USER.NOME}
+    Input Text                      id=${PGCADASTRO.INPUT_SOBRENOME}     ${USER.SOBRENOME}
+    Input Text                      id=${PGCADASTRO.INPUT_PW}               ${USER.SENHA}
+    Select From List By Value       id=${PGCADASTRO.LSITEM_DATA}            ${USER.DATA}
+    Select From List By Value       id=${PGCADASTRO.LSITEM_MES}             ${USER.MES}
+    Select From List By Value       id=${PGCADASTRO.LSITEM_ANO}             ${USER.ANO}
+    Select Checkbox                 id=${PGCADASTRO.CHBOX_NEWSL}
+    Input Text                      id=${PGCADASTRO.INPUT_EMPRESA}    ${USER.EMPRESA}
+    Input Text                      id=${PGCADASTRO.INPUT_ENDERECO1}             ${USER.ENDERECO}
+    Input Text                      id=${PGCADASTRO.INPUT_ENDERECO2}             ${USER.COMPLEMENTO}
+    Input Text                      id=${PGCADASTRO.INPUT_CIDADE}                ${USER.CIDADE}
+    Select From List By Value       id=${PGCADASTRO.INPUT_ESTADO}                4
+    Input Text                      id=${PGCADASTRO.INPUT_CEP}                   ${USER.CEP}
+    Select From List By Value       id=${PGCADASTRO.INPUT_PAIS}                  21
+    Input Text                      id=${PGCADASTRO.INPUT_FEEDBACK}                ${USER.FEEDBACK}
+    Input Text                      id=${PGCADASTRO.INPUT_PHONE1}                ${USER.PHONE1}
+    Input Text                      id=${PGCADASTRO.INPUT_PHONE2}                ${USER.PHONE2}
+    Input Text                      id=${PGCADASTRO.INPUT_REFERENCIA}                ${USER.REFERENCIA}
 
 Submeter cadastro    
-    Click Element                   id=submitAccount
+    Click Element                   id=${PGCADASTRO.SUBMIT_BTN}
 
 Conferir se o cadastro foi efetuado com sucesso
-    Element Should Not Be Visible   css=alert alert-danger
-    Page Should Contain Element     xpath=//p[@class='info-account']
-    Page Should Contain Element     xpath=//a[@class='logout']
-
-                                    
-
-
+    Element Should Not Be Visible   css=${PGCADASTRO.ERRO}
+    Page Should Contain Element     xpath=${PGCADASTRO.WELCOME}
+    Page Should Contain Element     xpath=${PGCADASTRO.LOGOUT_BTN}
