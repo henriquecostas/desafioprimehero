@@ -43,7 +43,7 @@ Documentation       Variáveis e elementos da página de Cadastro de Usuário do
 ...     VALID=0
 
 &{USER}
-...     EMAIL=emaildeexemplo@dominio.com
+...     EMAIL=emaildeexemplo1@dominio.com
 ...     SENHA=123456
 ...     NOME=Henri
 ...     SOBRENOME=Costa

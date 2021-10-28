@@ -20,17 +20,10 @@ Conferir mensagem de erro "${SEARCHRESULT.ERRO_MENSAGEM}"
     Should Be Equal                 ${SEARCHRESULT.ERRO_LOCATOR.text}       ${SEARCHRESULT.ERRO_MENSAGEM}
     Log                             ${SEARCHRESULT.ERRO_LOCATOR.text}
 
-<<<<<<< HEAD
-    ${SEARCHRESULT.ERRO_LOCATOR}=        Get WebElement              ${SEARCHRESULT.ERRO_LOCATOR}
-    Should Be Equal         ${SEARCHRESULT.ERRO_LOCATOR.text}        ${SEARCHRESULT.ERRO_MENSAGEM}
-    Log                     ${SEARCHRESULT.ERRO_LOCATOR.text}
- 
 ###### Caso de Teste 03 ######
-=======
->>>>>>> 045a25a6541e78142dacbfd5264dd058da9c8a58
 Passar o mouse por cima da categoria "${HOME.MENU_WOMEN}" no menu principal superior da categoria
-    Page Should Contain Element     ${HOME.MENU_WOMEN}
-    Mouse Over                      ${HOME.MENU_WOMEN} 
+    Wait Until Element is Visible     ${HOME.MENU_WOMEN}
+    Mouse Over                        ${HOME.MENU_WOMEN} 
 
 Clicar na sub categoria "${SDRESSES.SUBMENU}"
     Wait Until Element Is Visible   xpath=${SDRESSES.SUBMENU}

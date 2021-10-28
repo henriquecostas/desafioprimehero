@@ -13,7 +13,7 @@ Inicia Sessão
     Maximize Browser Window
 
 Encerra Sessão
-    Set Screenshot Directory    ../primeherorep/screenshots/   
+    Set Screenshot Directory    ../primeherorep/desafioweb/screenshots/   
     Capture Page Screenshot
     Close Browser
 
